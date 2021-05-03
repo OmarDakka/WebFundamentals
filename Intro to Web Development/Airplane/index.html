@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Airplane
+	</title>
+
+	<style type="text/css">
+		#prompt div {
+			display: inline-block;
+		}
+
+		#prompt button {
+			display: block;
+		}
+
+		#background {
+			width: 900px;
+			height: 700px;
+			display: none;
+		}
+
+		.ocean {
+			background-image: url("ocean.jpg");
+		}
+
+		.forest {
+			background-image: url("forset.jpg");
+		}
+
+		.rocks {
+			background-image: url("rocks.jpg");
+		}
+
+		.stars {
+			background-image: url("stars.jpg");
+		}
+
+		#player {
+			position: absolute;
+			width: 70px;
+			height: 75px;
+		}
+
+		.player1 {
+			background-image: url(player.png);
+			width: 70px;
+			height: 75px;
+			background-repeat: no-repeat;
+			background-size: auto;
+			background-position: center;
+		}
+
+		.player2 {
+			background-image: url(comrade.png);
+			width: 70px;
+			height: 75px;
+			background-repeat: no-repeat;
+			background-size: auto;
+			background-position: center;
+		}
+
+		.player3 {
+			background-image: url(blue.png);
+			width: 70px;
+			height: 75px;
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+		}
+
+		.player4 {
+			background-image: url(Silver.png);
+			width: 70px;
+			height: 75px;
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+		}
+
+		.enemy {
+			position: absolute;
+			background-image: url(blue.png);
+			width: 70px;
+			height: 75px;
+			background-repeat: no-repeat;
+			background-size: contain;
+			transform: rotate(180deg);
+			background-position: center;
+		}
+
+		.enemy2 {
+			position: absolute;
+			background-image: url(Silver.png);
+			width: 70px;
+			height: 75px;
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+			transform: rotate(180deg);
+		}
+
+		.enemy3 {
+			position: absolute;
+			background-image: url(comrade.png);
+			width: 70px;
+			height: 75px;
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+			transform: rotate(180deg);
+		}
+
+		.missile {
+			position: absolute;
+			background-color: greenyellow;
+			width: 2px;
+			height: 10px;
+
+		}
+	</style>
+
+</head>
+
+<body>
+	<div id="prompt">
+		<div>
+			<div class="player1"></div>
+			<button onclick="playerSelect(0)">
+				Select
+			</button>
+		</div>
+		<div>
+			<div class="player2"></div>
+			<button onclick="playerSelect(1)">
+				Select
+			</button>
+		</div>
+		<div>
+			<div class="player3"></div>
+			<button onclick="playerSelect(2)">
+				Select
+			</button>
+		</div>
+		<div>
+			<div class="player4"></div>
+			<button onclick="playerSelect(3)">
+				Select
+			</button>
+		</div>
+
+	</div>
+
+	<div id="background">
+		<div id="player"></div>
+		<div id="enemies">
+			<div class="enemy"></div>
+		</div>
+		<div id="missiles"></div>
+	</div>
+
+	<script type="text/javascript">
+
+		var enemiesDict = {
+			0: "enemy",
+			1: "enemy2",
+			2: "enemy3"
+		}
+
+		var playerDict = {
+			0: "player1",
+			1: "player2",
+			2: "player3",
+			3: "player4"
+		}
+
+		var worldDict = {
+			0: "ocean",
+			1: "forest",
+			2: "rocks",
+			3: "stars"
+		}
+
+		var player = {
+			left: 450,
+			top: 620,
+			width: 60,
+			height: 75
+		}
+
+		var enemies = [
+			{ left: 350, top: 200 },
+			{ left: 450, top: 250 },
+			{ left: 550, top: 300 },
+			{ left: 600, top: 350 },
+		]
+
+		var missiles = []
+
+		function background() {
+			var value = Math.round((Math.random() * 10) % 3);
+			var bg = worldDict[value];
+			document.getElementById("background").classList.add(bg);
+		}
+
+		function drawPlayer() {
+			document.getElementById("player").style.left = player.left + "px";
+			document.getElementById("player").style.top = player.top + "px";
+		}
+
+		var enem = Math.round((Math.random() * 10) % 2);
+
+		function drawEnemies() {
+			var bg = enemiesDict[enem];
+			content = "";
+			for (var idx = 0; idx < enemies.length; idx++) {
+				content += "<div class='" + bg + "' style='left:" + enemies[idx].left + "px; top: " + enemies[idx].top + "px'></div>";
+			}
+		document.getElementById("enemies").innerHTML = content;
+		}
+
+		function drawMissiles(){
+			content = "";
+			for(var idx = 0; idx < missiles.length; idx++){
+				content += "<div class='missile' style='left:"+missiles[idx].left+"px; top:"+missiles[idx].top+"px'></div>"
+			}
+		document.getElementById("missiles").innerHTML = content;
+		}
+
+		function moveEnemies() {
+			for (var idx = 0; idx < enemies.length; idx++) {
+				enemies[idx].top = enemies[idx].top + 1;
+			}
+		}
+
+		function moveMissiles() {
+			for (var idx = 0; idx < missiles.length; idx++) {
+				missiles[idx].top = missiles[idx].top - 4;
+			}
+		}
+
+		document.onkeydown = function (e) {
+			if (e.keyCode == 37) { //left
+				if (player.left > 0) {
+					player.left = player.left - 10;
+				}
+			}
+			if (e.keyCode == 39) { //right
+				if (player.left + player.width < (document.getElementById("background").offsetWidth)) {
+					player.left = player.left + 10;
+				}
+			}
+			if (e.keyCode == 40) { //down
+				if (player.top + player.height < document.getElementById("background").offsetHeight) {
+					player.top = player.top + 10;
+				}
+			}
+			if (e.keyCode == 38) { //up
+				if (player.top > ((document.getElementById("background").offsetHeight / 3) * 2)) {
+					player.top = player.top - 10;
+				}
+			}
+			if(e.keyCode == 32){ //fire
+				missiles.push({left: (player.left + 34) , top: (player.top - 8)})
+			}
+			console.log(missiles);
+			drawMissiles();
+			drawPlayer();
+		}
+
+		function playerSelect(value) {
+			document.getElementById("prompt").style.display = "none";
+			document.getElementById("background").style.display = "block";
+			var bg = playerDict[value];
+			document.getElementById("player").classList.add(bg);
+			background();
+			drawEnemies();
+			drawPlayer();
+
+		}
+		
+
+		function gameLoop() {
+
+			drawPlayer();
+
+
+			moveEnemies();
+			drawEnemies();
+			drawMissiles();
+			moveMissiles();
+			setTimeout(gameLoop, 30)
+		}
+		gameLoop();
+
+	</script>
+</body>
+
+</html>
