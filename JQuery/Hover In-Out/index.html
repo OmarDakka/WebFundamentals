@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover In/Out</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('img').click(function() {
+                console.log('data-alt-src value is', $(this).attr('data-alt-src'));
+            });
+
+            $('img').hover(function() {
+                var temp = $(this).attr('src');
+                $(this).attr('src', $(this).attr('data-alt-src'));
+                $(this).attr('data-alt-src', temp);
+            }, function() {
+                var temp = $(this).attr('src');
+                $(this).attr('src', $(this).attr('data-alt-src'));
+                $(this).attr('data-alt-src', temp);
+            });
+
+        });
+    </script>
+
+
+
+
+</head>
+
+<body>
+    <div class="container">
+        <img src="ninja.jpg" data-alt-src="ninja 2.jpg">
+        <img src="ninja.jpg" data-alt-src="ninja 2.jpg">
+        <img src="ninja.jpg" data-alt-src="ninja 2.jpg">
+        <img src="ninja.jpg" data-alt-src="ninja 2.jpg">
+        <img src="ninja.jpg" data-alt-src="ninja 2.jpg">
+        <img src="ninja.jpg" data-alt-src="ninja 2.jpg">
+        <img src="ninja.jpg" data-alt-src="ninja 2.jpg">
+        <img src="ninja.jpg" data-alt-src="ninja 2.jpg">
+    </div>
+</body>
+
+</html>

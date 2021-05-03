@@ -1,0 +1,13 @@
+select * from twitter.users;
+select * from twitter.follows;
+select users.first_name, users.last_name from users;
+
+insert into twitter.users (users.first_name, users.last_name)
+values ("Omar", "Daqah");
+
+select * from twitter.users;
+update twitter.users set users.first_name = "Oni", users.last_name = "Chan" where users.id = 1;
+
+SET SQL_SAFE_UPDATES = 0;
+
+delete from users where users.id = 5;

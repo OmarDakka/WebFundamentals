@@ -1,0 +1,160 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    background-color: wheat;
+    width: 80%;
+    margin: 0px auto;
+}
+
+.header {
+    background-color: seashell;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.body {
+    padding: 20px;
+    background-image: linear-gradient(#47343b, #6f5964, #47343b);
+}
+
+.footer {
+    background-color: seashell;
+    height: 50px;
+}
+
+#photo {
+    border: 5px solid grey;
+    max-width: 340px;
+    height: auto;
+}
+
+.about-header {
+    background-image: linear-gradient(white, gray, white);
+    height: 30px;
+    padding: 10px;
+}
+
+.continue {
+    padding: 10px;
+    transform: translateY(20px);
+}
+
+.firstHalf {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0 30px 0;
+}
+
+.pr {
+    background-color: whitesmoke;
+    height: 180px;
+    padding: 10px;
+}
+
+.p {
+    padding: 1.25rem;
+}
+
+.bheader {
+    background-image: linear-gradient(white, gray, white);
+    padding: 5px;
+}
+
+.secondHalf {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.laMode {
+    flex: 0.33;
+}
+
+.descpic {
+    width: 100%;
+}
+
+.bodydesc {
+    background-image: linear-gradient(white, silver);
+}
+
+.cheader {
+    background-image: linear-gradient(white, gray, white);
+    padding: 10px;
+    font-weight: 600;
+}
+
+.cheader h4 {
+    color: white;
+}
+
+.bodydesc2 {
+    background-image: linear-gradient(white, grey);
+}
+
+.sql {
+    width: 50px;
+    height: auto;
+    margin: 5px 5px;
+}
+
+.button {
+    text-align: center;
+    margin-bottom: 8px;
+    background-color: forestgreen;
+    border: 1px solid black;
+    border-radius: 4px;
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+    box-shadow: 2px 2px 5px #0e0d0d;
+}
+
+.picscols {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
+    width: auto;
+    height: auto;
+}
+
+.footer1 {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.contacts-information {
+    display: flex;
+    justify-content: center;
+}
+
+.footdesc {
+    color: black;
+    transform: translateY(-5px);
+    display: inline-block;
+}
+
+.footpic {
+    width: 20px;
+    height: 20px;
+}
+
+.contact-info {
+    margin: 0 5px;
+}

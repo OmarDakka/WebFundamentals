@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script>
+        $(document).ready(function () {
+            $('#linkOne').click(function () {
+                $(this).hide();
+            })
+            $('#linkTwo').click(function () {
+                $('#linkOne').show();
+            })
+            $('#linkThree').click(function () {
+                $('#linkOne,#linkTwo').toggle();
+
+            })
+            $('p').click(function () {
+                $(this).slideUp();
+            })
+            $('h2').click(function () {
+                $('p').slideDown();
+            })
+            $('#linkFour').click(function () {
+                $('p').slideToggle();
+            })
+            $('#linkFive').click(function () {
+                $('p,h2').fadeOut(2000);
+            })
+            $('#linkSix').click(function () {
+                $('p,h2').fadeIn(1000);
+            })
+            $('#linkSeven').click(function () {
+                $('a').addClass('btn-danger');
+            })
+            $('#headingOne').click(function () {
+                $(this).before('<h3>:)</h3>');
+                $(this).after('<h3>:(</h3>');
+            })
+            $('#headingTwo').click(function () {
+                $(this).append(' to show the rest of the text');
+            })
+            $('#linkEight').click(function () {
+                $('h1').html('<h2>hello I rule these lands</h2>')
+            })
+            $('#attribute').click(function () {
+                $('h1').attr("style", "color:red");
+            })
+            $('button').click(function () {
+                $('input:text').val('Your name should go here');
+            })
+            $('p').hover(function (){
+                $('p').text('weeeeeeeee');
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <div class="row g-5 py-5">
+        <div class="col-md-4 d-flex align-items-start"></div>
+        <div>
+            <h1 id="headingOne">Click me to show my split personality</h1>
+            <h2>Click me to slide the paragraph down</h2>
+            <p>Click me to slide me up</p>
+            <a id="linkOne" class="btn btn-primary" href="#">Click me if you want me to go away</a>
+        </div>
+    </div>
+    <div class="row g-5 py-5">
+        <div class="col-md-4 d-flex align-items-start"></div>
+        <div>
+            <h1 id="headingTwo">Click me</h1>
+            <h2>Click me to slide the paragraph down</h2>
+            <p>Click me to slide me up</p>
+            <a id="linkTwo" class="btn btn-primary" href="#">Click me if you want to see my brother again.</a>
+        </div>
+    </div>
+    <div class="row g-5 py-5">
+        <div class="col-md-4 d-flex align-items-start"></div>
+        <div>
+            <h1>Innocent people</h1>
+            <h2>Click me to slide the paragraph down</h2>
+            <p>Click me to slide me up</p>
+            <a id="linkThree" class="btn btn-primary" href="#">Click me to show and hide my brother at will</a>
+        </div>
+    </div>
+    <div class="row g-5 py-5">
+        <div class="col-md-4 d-flex align-items-start"></div>
+        <div>
+            <h1>Innocent people</h1>
+            <h2>Click me to slide the paragraph down</h2>
+            <p>Click me to slide me up</p>
+            <a id="linkFour" class="btn btn-primary" href="#">Click me to slide toggle the paragraphs</a>
+        </div>
+    </div>
+    <div class="row g-5 py-5">
+        <div class="col-md-4 d-flex align-items-start"></div>
+        <div>
+            <h1>Innocent people</h1>
+            <h2>Click me to slide the paragraph down</h2>
+            <p>Click me to slide me up</p>
+            <a id="linkFive" class="btn btn-primary" href="#">Click me to do the thanos snap</a>
+        </div>
+    </div>
+    <div class="row g-5 py-5">
+        <div class="col-md-4 d-flex align-items-start"></div>
+        <div>
+            <h1>Innocent people</h1>
+            <h2>Click me to slide the paragraph down</h2>
+            <p>Click me to slide me up</p>
+            <a id="linkSix" class="btn btn-primary" href="#">Click me to undo the thanos snap</a>
+        </div>
+    </div>
+    <div class="row g-5 py-5">
+        <div class="col-md-4 d-flex align-items-start"></div>
+        <div>
+            <h1>Innocent people</h1>
+            <h2>Click me to slide the paragraph down</h2>
+            <p>Click me to slide me up</p>
+            <a id="linkSeven" class="btn btn-primary" href="#">Click me to change color of buttons</a>
+        </div>
+    </div>
+    <div class="row g-5 py-5">
+        <div class="col-md-4 d-flex align-items-start"></div>
+        <div>
+            <h1 id="attribute">Click me to change all h1 attribute</h1>
+            <h2>Click me to slide the paragraph down</h2>
+            <p>Click me to slide me up</p>
+            <a id="linkEight" class="btn btn-primary" href="#">Click me</a>
+        </div>
+    </div>
+    <div class="row g-5 py-5">
+        <div class="col-md-4 d-flex align-items-start"></div>
+        <div>
+            <h1>Innocent people</h1>
+            <h2>Click me to slide the paragraph down</h2>
+            <p>Click me to slide me up</p>
+            <h4>Name: <input type="text" name="user"></h4>
+            <button class="btn btn-primary">Set the value of the input field</button>
+            <a class="btn btn-primary" href="#">Click me</a>
+        </div>
+    </div>
+</body>
+
+</html>
