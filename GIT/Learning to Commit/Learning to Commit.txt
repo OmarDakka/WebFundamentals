@@ -1,0 +1,14 @@
+-- cd ..
+-- mkdir test
+-- touch index.html
+-- touch styles.css
+-- git init 
+-- commit -m "Test"
+-- git status 
+-- git add styles.css
+-- git status 
+-- git commit -m "update css"
+-- git log
+-- git revert -n HEAD
+-- git status
+-- git commit -m "update #2 css"
