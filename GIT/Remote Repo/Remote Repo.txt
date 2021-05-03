@@ -1,0 +1,100 @@
+
+RelaX@DESKTOP-EHOB9TS MINGW64 /c/basic_repo
+$ touch index.html
+
+RelaX@DESKTOP-EHOB9TS MINGW64 /c/basic_repo
+$ touch styles.css
+
+RelaX@DESKTOP-EHOB9TS MINGW64 /c/basic_repo
+$ git init
+Initialized empty Git repository in C:/basic_repo/.git/
+
+RelaX@DESKTOP-EHOB9TS MINGW64 /c/basic_repo (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+        styles.css
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+RelaX@DESKTOP-EHOB9TS MINGW64 /c/basic_repo (master)
+$ git remote add origin https://github.com/OmarDakka/basic_repo.git
+
+RelaX@DESKTOP-EHOB9TS MINGW64 /c/basic_repo (master)
+$ add .
+bash: add: command not found
+
+RelaX@DESKTOP-EHOB9TS MINGW64 /c/basic_repo (master)
+$ git add .
+
+RelaX@DESKTOP-EHOB9TS MINGW64 /c/basic_repo (master)
+$ git commit - m "remote repo assignment"
+error: pathspec '-' did not match any file(s) known to git
+error: pathspec 'm' did not match any file(s) known to git
+error: pathspec 'remote repo assignment' did not match any file(s) known to git
+
+RelaX@DESKTOP-EHOB9TS MINGW64 /c/basic_repo (master)
+$ git commit -m "remote repo assignment"
+[master (root-commit) b68308d] remote repo assignment
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 index.html
+ create mode 100644 styles.css
+
+RelaX@DESKTOP-EHOB9TS MINGW64 /c/basic_repo (master)
+$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+
+RelaX@DESKTOP-EHOB9TS MINGW64 /c/basic_repo (master)
+$ git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 238 bytes | 119.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/OmarDakka/basic_repo.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+RelaX@DESKTOP-EHOB9TS MINGW64 /c/basic_repo (master)
+$ git status \
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   styles.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+RelaX@DESKTOP-EHOB9TS MINGW64 /c/basic_repo (master)
+$ git add .
+
+RelaX@DESKTOP-EHOB9TS MINGW64 /c/basic_repo (master)
+$ git commit -m "updated css"
+[master aa394bb] updated css
+ 1 file changed, 9 insertions(+)
+
+RelaX@DESKTOP-EHOB9TS MINGW64 /c/basic_repo (master)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 351 bytes | 175.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/OmarDakka/basic_repo.git
+   b68308d..aa394bb  master -> master
+
+RelaX@DESKTOP-EHOB9TS MINGW64 /c/basic_repo (master)
+$
